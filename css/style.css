@@ -632,3 +632,55 @@ body.locked .toast { display: none !important; }
 @media (prefers-reduced-motion:reduce){
   .gate{transition:none}.gate-card{animation:none}.gate-spinner{animation:none;border-top-color:rgba(255,255,255,.4)}
 }
+
+/* ═══════════ MOBILE HARDENING (v6) ═══════════ */
+html, body { overflow-x: clip; }
+.q-text, .option span, .ropt span, .repeat-opt span, .expl, .hub-option p, .repeat-srcs, .src-line { overflow-wrap: anywhere; }
+.chip { max-width: 100%; }
+
+@media (max-width: 860px){
+  .test-topbar{ margin: 0 -14px; top: 0; border-radius: 0; padding: 8px 10px; gap: 8px; }
+  .test-top-actions{ flex-wrap: wrap; justify-content: flex-end; gap: 8px; margin-left: auto; }
+  .timer{ font-size: 17px; padding: 4px 10px; letter-spacing: .04em; }
+  .test-exam-name{ font-size: 11.5px; width: 100%; max-width: none; order: -1; color:#9db8d2; }
+  .exam-meta{ flex-wrap: wrap; gap: 10px; }
+  .exam-actions{ flex-wrap: wrap; }
+  .exam-actions .btn{ white-space: normal; }
+  .repeat-head{ flex-wrap: wrap; }
+  .repeat-badges{ margin-left: 0; width: 100%; justify-content: flex-start; }
+  .hub-option{ align-items: flex-start; }
+  .hub-option .arrow{ margin-left: auto; align-self: center; }
+  .modal-stats{ flex-wrap: wrap; }
+  .count-display{ gap: 10px; }
+  .count-display .num{ font-size: 64px; }
+  .setup-card{ padding: 22px 16px; }
+  .setup-actions{ flex-direction: column-reverse; align-items: stretch; }
+  .setup-actions > div{ justify-content: center; }
+  .setup-actions .btn{ flex: 1; justify-content: center; }
+  .q-foot{ flex-direction: column; align-items: stretch; gap: 14px; }
+  .mark-toggle{ justify-content: center; }
+  .q-foot > div{ justify-content: space-between; }
+  .q-nav .btn{ padding: 10px 14px; }
+  .gate-card{ padding: 26px 20px 22px; }
+  .footer-base{ flex-direction: column; gap: 8px; }
+  .review-head .q-count{ width: 100%; }
+}
+
+@media (max-width: 480px){
+  .container{ padding: 0 14px; }
+  .hero-inner{ padding: 40px 16px 42px; }
+  .hero h1{ font-size: 32px; }
+  .page{ padding: 20px 0 40px; }
+  .exam-card-top{ padding: 18px 18px 0; }
+  .exam-card h3, .exam-tag, .exam-card p.desc, .exam-meta{ margin-left: 18px; margin-right: 18px; }
+  .exam-actions{ padding: 16px 18px 18px; }
+  .palette-grid{ grid-template-columns: repeat(10, 1fr); }
+  .stepper input{ width: 80px; }
+  .quick-chips button{ padding: 6px 12px; }
+  .select-card{ padding: 22px 18px; }
+  .select-card h3{ font-size: 22px; }
+  .hub-panel{ padding: 18px; }
+  .review-item{ padding: 16px; }
+  .repeat-item{ padding: 14px; }
+  .gate-card{ padding: 22px 16px 18px; }
+}
