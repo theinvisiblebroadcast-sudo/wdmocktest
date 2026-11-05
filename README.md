@@ -5,6 +5,11 @@ A clean, time-based web app for practicing the **Workday Pro** certifications:
 - **Pro HCM Services** (HCM Core Services) — 646 practice questions
 - **HCM Data Loading Services** — 167 practice questions
 
+**Restricted access:** the site is public on GitHub, but first-time visitors must sign in.
+Credentials issued for this project unlock the app; anyone without them sees only the sign-in screen.
+(Client-side gate — deters casual access, not a substitute for a private repo + server-side auth.)
+
+
 Answers stay hidden until you submit, just like the real exam. Built from the study material collected in this folder (question banks, validated answer keys and practice exams), de-duplicated and ranked by cross-source frequency.
 
 ## Features
@@ -37,6 +42,8 @@ git branch -M main
 git remote add origin git@github.com:<you>/<private-repo>.git
 git push -u origin main
 ```
+
+The current default remote (if configured) is `https://github.com/theinvisiblebroadcast-sudo/wdmocktest.git`, served as a public GitHub Pages site gated by the sign-in screen. To unlock it for Pages hosting: repo **Settings → Pages → Deploy from branch → main / (root)**.
 
 ### Serving it
 
