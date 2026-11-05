@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Workday Pro Mock Exams | Pro HCM Services &amp; HCM Data Loading</title>
+<meta name="description" content="Time-based mock exams for Workday Pro: HCM Core Services and HCM Data Loading Services. Most repeated questions, instant scoring, detailed answer review.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=4">
+</head>
+<body>
+
+<!-- ═══════════ NAV ═══════════ -->
+<header class="nav" id="topNav">
+  <div class="nav-inner">
+    <a class="brand" href="#/" aria-label="Workday Pro Mock Exams — Home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="30" height="30" fill="none">
+          <rect x="2" y="2" width="28" height="28" rx="8" fill="#0b5cad"/>
+          <path d="M9 21.5 13.2 10h2.5l3.4 8.4L21.6 10h2.3L28.4 21.5h-2.7l-2.5-6.6-2.3 6.6h-2.5l-3.4-8.9L13 21.5H9Z" fill="#fff" opacity="0.96" transform="translate(-2.2 0) scale(0.92)"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <span class="brand-title">Workday&nbsp;Pro</span>
+        <span class="brand-sub">Mock Exam Studio</span>
+      </span>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="#/" data-route="/">Home</a>
+      <a href="#/mock" data-route="/mock">Mock Exams</a>
+      <a href="#/repeated" data-route="/repeated">Most Repeated</a>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobileNav">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+  <div class="mobile-nav" id="mobileNav" hidden>
+    <a href="#/">Home</a>
+    <a href="#/mock">Mock Exams</a>
+    <a href="#/repeated">Most Repeated</a>
+    <a href="#/exam/pro-hcm">Pro HCM Services</a>
+    <a href="#/exam/hcm-data-loading">HCM Data Loading</a>
+  </div>
+</header>
+
+<main id="app" tabindex="-1"></main>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <div class="footer-brand">Workday Pro <span>Mock Exam Studio</span></div>
+      <p class="footer-note">A self-study practice tool built from publicly-shared Workday certification prep material. Not affiliated with or endorsed by Workday, Inc. Workday is a trademark of Workday, Inc.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-head">Exams</div>
+      <a href="#/exam/pro-hcm">Pro HCM Services</a>
+      <a href="#/exam/hcm-data-loading">HCM Data Loading Services</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-head">Study</div>
+      <a href="#/repeated">Most Repeated Questions</a>
+      <a href="#/mock">Take a Timed Mock Test</a>
+    </div>
+  </div>
+  <div class="footer-base"><span>Built for personal exam preparation.</span><span id="footerCount"></span></div>
+</footer>
+
+<!-- ═══════════ MODAL ═══════════ -->
+<div class="modal-backdrop" id="modalBackdrop" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-icon" id="modalIcon"></div>
+    <h2 class="modal-title" id="modalTitle"></h2>
+    <p class="modal-text" id="modalText"></p>
+    <div class="modal-stats" id="modalStats" hidden></div>
+    <div class="modal-actions" id="modalActions"></div>
+  </div>
+</div>
+
+<!-- ═══════════ TOAST ═══════════ -->
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="js/data.js?v=2"></script>
+<script src="js/app.js?v=2"></script>
+</body>
+</html>
