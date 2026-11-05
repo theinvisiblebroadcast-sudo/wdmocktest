@@ -1036,6 +1036,40 @@ window.addEventListener('beforeunload', (e) => {
   if (document.body.classList.contains('taking-test')) { e.preventDefault(); e.returnValue = ''; }
 });
 
+/* Same-hash links: force re-render since hashchange won't fire */
+document.addEventListener('click', (e) => {
+  const link = e.target.closest('a[href^="#/"]');
+  if (!link) return;
+  const target = link.getAttribute('href');
+  if (target === window.location.hash) {
+    e.preventDefault();
+    clearInterval(testTimer);
+    router();
+    window.scrollTo(0, 0);
+  }
+});
+
+/* Guard in-app navigation away from an active test */
+document.addEventListener('click', (e) => {
+  if (!document.body.classList.contains('taking-test')) return;
+  const link = e.target.closest('a[href^="#/"]');
+  if (!link) return;
+  // allow in-test controls only
+  if (link.id === 'exitTestBtn') return;
+  e.preventDefault();
+  const target = link.getAttribute('href');
+  const inProg = store.get(LS.inProgress);
+  showModal({
+    title: 'Leave the exam?',
+    text: 'Your progress and remaining time are saved on this device. You can resume from the exam setup screen.',
+    icon: 'info',
+    actions: [
+      { label: 'Keep testing', kind: 'btn-primary' },
+      { label: 'Save & exit', kind: 'btn-ghost', onClick: () => { clearInterval(testTimer); setTakingTest(false); window.location.hash = target; } },
+    ],
+  });
+});
+
 /* Mobile nav toggle */
 const navToggle = document.getElementById('navToggle');
 const mobileNav = document.getElementById('mobileNav');
